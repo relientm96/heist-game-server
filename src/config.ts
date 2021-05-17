@@ -2,54 +2,37 @@ import { Env } from 'skuba-dive';
 
 interface Config {
   environment: Environment;
-
   logLevel: string;
   name: string;
-  version: string;
-
-  metricsServer?: string;
-  port?: number;
+  port: number;
 }
 
 type Environment = typeof environments[number];
 
-const dev = '<%- devGantryEnvironmentName %>';
-const prod = '<%- prodGantryEnvironmentName %>';
-
-const environments = ['local', 'test', dev, prod] as const;
+const environments = ['local', 'dev', 'prod'] as const;
 
 const environment = Env.oneOf(environments)('ENVIRONMENT');
+
+const PORT = 42341;
+const SERVICE_NAME = 'heist-game-server';
 
 /* istanbul ignore next: config verification makes more sense in a smoke test */
 const configs: Record<Environment, () => Omit<Config, 'environment'>> = {
   local: () => ({
     logLevel: 'debug',
-    name: '<%- serviceName %>',
-    version: 'local',
-
-    port: Env.nonNegativeInteger('PORT', { default: Number('42341') }),
+    name: SERVICE_NAME,
+    port: PORT,
   }),
 
-  test: () => ({
-    ...configs.local(),
-
-    logLevel: Env.string('LOG_LEVEL', { default: 'silent' }),
-    version: 'test',
-  }),
-
-  [dev]: () => ({
-    ...configs[prod](),
-
+  dev: () => ({
+    ...configs.prod(),
     logLevel: 'debug',
   }),
 
-  [prod]: () => ({
+  prod: () => ({
     logLevel: 'info',
-    name: Env.string('SERVICE'),
-    version: Env.string('VERSION'),
-
-    metricsServer: 'localhost',
-    port: Env.nonNegativeInteger('PORT'),
+    name: SERVICE_NAME,
+    port: PORT,
   }),
 };
 

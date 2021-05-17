@@ -9,7 +9,7 @@ interface Config {
 
 type Environment = typeof environments[number];
 
-const environments = ['local', 'dev', 'prod'] as const;
+const environments = ['local', 'test', 'dev', 'prod'] as const;
 
 const environment = Env.oneOf(environments)('ENVIRONMENT');
 
@@ -22,6 +22,13 @@ const configs: Record<Environment, () => Omit<Config, 'environment'>> = {
     logLevel: 'debug',
     name: SERVICE_NAME,
     port: PORT,
+  }),
+
+  test: () => ({
+    ...configs.local(),
+
+    logLevel: Env.string('LOG_LEVEL', { default: 'silent' }),
+    version: 'test',
   }),
 
   dev: () => ({

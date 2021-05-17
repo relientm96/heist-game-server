@@ -1818,6 +1818,11 @@
   dependencies:
     "@types/superagent" "*"
 
+"@types/uuid@^8.3.0":
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-8.3.0.tgz#215c231dff736d5ba92410e6d602050cce7e273f"
+  integrity sha512-eQ9qFW/fhfGJF8WKHGEHZEyVWfZxrT+6CLIJGBcZPfxUh/+BnEj+UCGYMlr9qZuX/2AltsvwrGqp0LhEW8D0zQ==
+
 "@types/yargs-parser@*":
   version "20.2.0"
   resolved "https://registry.yarnpkg.com/@types/yargs-parser/-/yargs-parser-20.2.0.tgz#dd3e6699ba3237f0348cd085e4698780204842f9"
@@ -8080,7 +8085,12 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
-runtypes@^6.0.0:
+runtypes-filter@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/runtypes-filter/-/runtypes-filter-0.6.0.tgz#847b87833e63ea3f592c4bbfd87266688fcb2b1f"
+  integrity sha512-eLWb11WkymVwVeJBoHnoZymPMhaAcTJFerbh7LPVoDVZZ48fXVeLo1LNsLybUpzo67cROq0rfG/mm5EktBN6DQ==
+
+runtypes@^6.0.0, runtypes@^6.3.0:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/runtypes/-/runtypes-6.3.0.tgz#bd88392c21f471bd45591d5eabaa4644ca7cdf3c"
   integrity sha512-FTNUs13CIrCTjReBOaeY/8EY1LYIQVkkwyE9z5MCjZe9uew9/8TRbWF1PcTczgTFfGBjkjUKeedFWU2O3ExjPg==
@@ -9404,7 +9414,7 @@ uuid@^3.3.2:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
-uuid@^8.3.0:
+uuid@^8.3.0, uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==

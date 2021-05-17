@@ -4,14 +4,9 @@
 
 ## Design
 
-heist-game-server is a Node.js HTTP server built in line with our [technology strategy].
-It uses the [Express] middleware framework and common SEEK packages.
-Resource APIs enable synchronous interactions and serve as the backbone of SEEK's general service architecture.
+heist-game-server is a Node.js HTTP server built with the `Express` middleware framework.
 
-This project is deployed as a containerised application with [Gantry].
-A typical resource API instance does not require more than 1 vCPU,
-so we eschew clustering configurations in favour of a single Node.js process per container.
-Under load, we autoscale horizontally in terms of container count up to `autoScaling.maxCount`.
+This project is to be deployed as a containerised application with a typical resource API instance does not require more than 1 vCPU.
 
 ## Development
 

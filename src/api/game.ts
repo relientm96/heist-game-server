@@ -40,7 +40,9 @@ export const createGame: Handler = (_req, res) => {
     timeout: expiryTimeout,
   };
   addNewRoom(createdGameRoom);
-  res.send(`Successfully created room. Here is your pincode: ${fourDigitCode}`);
+  res.send({
+    pinCode: fourDigitCode,
+  });
 };
 
 export const joinRoom: Handler = (req, res) => {

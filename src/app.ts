@@ -1,5 +1,6 @@
 import './register';
 
+import cors from 'cors';
 import express from 'express';
 
 import { createGame, getRooms, joinRoom } from './api/game';
@@ -8,6 +9,7 @@ import { smokeTestHandler } from './api/smokeTest';
 import { config } from './config';
 
 const app = express()
+  .use(cors())
   .use(express.json())
   .use(
     express.urlencoded({

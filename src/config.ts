@@ -4,7 +4,7 @@ interface Config {
   environment: Environment;
   logLevel: string;
   name: string;
-  port: number;
+  port: number | string;
 }
 
 type Environment = typeof environments[number];
@@ -13,7 +13,7 @@ const environments = ['local', 'test', 'dev', 'prod'] as const;
 
 const environment = Env.oneOf(environments)('ENVIRONMENT');
 
-const PORT = 42341;
+const PORT = process.env.PORT || 42341;
 const SERVICE_NAME = 'heist-game-server';
 
 /* istanbul ignore next: config verification makes more sense in a smoke test */

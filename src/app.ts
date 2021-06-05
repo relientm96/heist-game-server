@@ -16,6 +16,9 @@ const app = express()
       extended: true,
     }),
   )
+  .get('/', (_, res) => {
+    res.send('Hi!');
+  })
   .get('/health', healthCheckHandler)
   .get('/smoke', smokeTestHandler)
   .post('/room', joinRoom)

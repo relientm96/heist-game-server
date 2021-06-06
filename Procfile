@@ -1,1 +1,1 @@
-web: ENVIRONMENT=prod skuba start
+web: ENVIRONMENT=prod yarn start

@@ -1,1 +1,1 @@
-web: ENVIRONMENT=prod node lib/app.js
+web: ENVIRONMENT=prod skuba start

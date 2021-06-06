@@ -1,1 +1,1 @@
-web: ENVIRONMENT=prod yarn start
+web: yarn && ENVIRONMENT=prod yarn start

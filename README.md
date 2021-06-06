@@ -1,6 +1,7 @@
 # heist-game-server
 
 [![Powered by skuba](https://img.shields.io/badge/🤿%20skuba-powered-009DC4)](https://github.com/seek-oss/skuba)
+![Deploy to Heroku](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
 
 ## Design
 

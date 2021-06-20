@@ -25,6 +25,7 @@
   "private": true,
   "scripts": {
     "build": "skuba build",
+    "deploy": "skuba build && git push heroku master",
     "format": "skuba format",
     "lint": "skuba lint",
     "start": "ENVIRONMENT=local skuba start",

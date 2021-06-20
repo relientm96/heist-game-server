@@ -13,7 +13,7 @@ const environments = ['local', 'test', 'dev', 'prod'] as const;
 
 const environment = Env.oneOf(environments)('ENVIRONMENT');
 
-const PORT = process.env.PORT || 42341;
+const PORT = (process.env.PORT && parseInt(process.env.PORT, 10)) || 42341;
 const SERVICE_NAME = 'heist-game-server';
 
 /* istanbul ignore next: config verification makes more sense in a smoke test */

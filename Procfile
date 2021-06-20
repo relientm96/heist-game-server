@@ -1,1 +1,1 @@
-web: yarn && ENVIRONMENT=prod yarn start
+web: ENVIRONMENT=prod node lib/listen.js

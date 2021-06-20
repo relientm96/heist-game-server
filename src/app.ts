@@ -3,10 +3,10 @@ import './register';
 import cors from 'cors';
 import express from 'express';
 
-import { createGame, getRooms, joinRoom } from './api/game';
-import { healthCheckHandler } from './api/healthCheck';
-import { smokeTestHandler } from './api/smokeTest';
-import { config } from './config';
+import { createGame, getRooms, joinRoom } from 'src/api/game';
+import { healthCheckHandler } from 'src/api/healthCheck';
+import { smokeTestHandler } from 'src/api/smokeTest';
+import { config } from 'src/config';
 
 const app = express()
   .use(cors())

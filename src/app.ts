@@ -3,9 +3,10 @@ import './register';
 import cors from 'cors';
 import express from 'express';
 
-import { createGame, getRooms, joinRoom } from 'src/api/game';
 import { healthCheckHandler } from 'src/api/healthCheck';
-import { smokeTestHandler } from 'src/api/smokeTest';
+import { createGame } from 'src/api/room/createRoom';
+import { getRooms } from 'src/api/room/getRoom';
+import { joinRoom } from 'src/api/room/joinRoom';
 import { config } from 'src/config';
 
 const app = express()
@@ -20,9 +21,8 @@ const app = express()
     res.send('Hi!');
   })
   .get('/health', healthCheckHandler)
-  .get('/smoke', smokeTestHandler)
-  .post('/room', joinRoom)
   .get('/room', getRooms)
+  .post('/room', joinRoom)
   .post('/game', createGame);
 
 export default Object.assign(app, {

@@ -7,5 +7,5 @@ import { Handler } from 'express';
  * unhealthy and needs to be recycled.
  */
 export const healthCheckHandler: Handler = (_req, res) => {
-  res.send('');
+  res.sendStatus(204);
 };
